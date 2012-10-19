@@ -1,0 +1,105 @@
+class Diagram
+parent class
+-----------------------------------
+Information			-----name of class
+-----------------------------------
++Name				-----class properties
++Age
++Schoolyear
+-----------------------------------
++SetInfo(name,age,schoolyear)	-----class methods
++show()
+-----------------------------------
+		^
+		l
+		l
+child class		l
+---------------------    inheritance
+SecondYearInformation
+---------------------
+---------------------
++SetInfo(name,age)
+---------------------
+
+
+class Information:
+    def SetInfo(self,name,age,schoolyear):
+        self.Name=name
+        self.Age=age
+        self.Schoolyear=schoolyear
+    def show(self):
+        print("Name: %s " % (self.Name))
+        print("Age: %i " % (self.Age))
+        print("Schoolyear: %s " % (self.Schoolyear))
+
+ListOfStudents=[]
+student=Information()
+student.SetInfo("Jane",17,"Second")
+ListOfStudents.append(student)
+
+student=Information()
+student.SetInfo("Elvira",22,"Second")
+ListOfStudents.append(student)
+
+student=Information()
+student.SetInfo("Errol",19,"Second")
+ListOfStudents.append(student)
+
+student=Information()
+student.SetInfo("Jamaica",18,"Third")
+ListOfStudents.append(student)
+
+student=Information()
+student.SetInfo("Geraldine",16,"First")
+ListOfStudents.append(student)
+
+for student in ListOfStudents:
+    student.show()
+
+------------------------------------------------------------
+
+class Information:
+    def SetInfo(self,name,age,schoolyear):
+        self.Name=name
+        self.Age=age
+        self.Schoolyear=schoolyear
+    def show(self):
+        print("Name: %s " % (self.Name))
+        print("Age: %i " % (self.Age))
+        print("School Year: %s " % (self.Schoolyear))
+
+class SecondYearInfo(Information):
+    def SetInfo(self,name,age):
+        self.Name=name
+        self.Age=age
+        self.Schoolyear="Second"
+ListOfStudents=[]
+student=SecondYearInfo()
+student.SetInfo("Jane",17)
+ListOfStudents.append(student)
+
+student=SecondYearInfo()
+student.SetInfo("Elvira",22)
+ListOfStudents.append(student)
+
+student=SecondYearInfo()
+student.SetInfo("Errol",19)
+ListOfStudents.append(student)
+
+student=SecondYearInfo()
+student.SetInfo("BJ",19)
+ListOfStudents.append(student)
+
+student=Information()
+student.SetInfo("Jamaica",18,"Third")
+ListOfStudents.append(student)
+
+student=Information()
+student.SetInfo("Geraldine",16,"First")
+ListOfStudents.append(student)
+
+for student in ListOfStudents:
+    student.show()
+--------------------------------------------
+
+
